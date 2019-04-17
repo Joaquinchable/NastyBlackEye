@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LoginBox from "./LoginBox";
-import RegisterBox from "./RegisterBox.js";
+import RegisterBox from "./RegisterBox.js.js";
 import "../Estilos/Login.css";
 class Login extends Component {
   constructor(props) {

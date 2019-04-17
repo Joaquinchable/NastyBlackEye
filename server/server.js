@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3003;
 mongoose.connect(
   process.env.DATABASE,
   {
@@ -26,6 +26,8 @@ app.listen(port, () => {
 const { User } = require("./models/User.js");
 
 const { auth } = require("./middleware/auth");
+
+const { articulo } = require("./models/articulo");
 
 app.get('/api/users/auth', (req, res) => {
   res.status(200).json({
@@ -74,7 +76,7 @@ app.post("/api/users/login", (req, res) => {
           .cookie("Nasty_auth", user.token)
           .status(200)
           .json({ loginSuccess: true })
-        //} catch (err) {
+      } catch (err) {
         console.log(err);
       }
     });
