@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const articleSchema = mongoose.Schema({
+const articuloSchema = mongoose.Schema({
 
 
     titulo: {

@@ -2,9 +2,10 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
+const port = process.env.PORT || 3002;
+
 require("dotenv").config();
 
-const port = process.env.PORT || 3003;
 mongoose.connect(
   process.env.DATABASE,
   {
@@ -19,15 +20,17 @@ mongoose.connect(
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.listen(port, () => {
-  console.log(`Servidor corriendo en el puerto ${port}`);
-});
 
-const { User } = require("./models/User.js");
+
+const { User } = require("./models/user.js");
 
 const { auth } = require("./middleware/auth");
 
 const { articulo } = require("./models/articulo");
+
+const { biofoto } = require("./models/biofoto");
+
+const { admin } = require('./middleware/admin');
 
 app.get('/api/users/auth', (req, res) => {
   res.status(200).json({
@@ -37,9 +40,48 @@ app.get('/api/users/auth', (req, res) => {
     name: req.user.name,
     lastname: req.user.lastname,
     role: req.user.role,
-    cart: req.user.cart,
-    history: req.user.history
+    token: req.user.token
 
+
+
+  });
+});
+
+app.get('/api/articles / articulo', (req, res) => {
+  Articulo.find({}, (err, articles) => {
+    if (err) return res.status(400).send(err)
+    res.status(200).send(articles)
+  })
+})
+
+app.get('/api/biofotos / biofot', (req, res) => {
+  Biofoto.find({}, (err, biofotos) => {
+    if (err) return res.status(400).send(err)
+    res.status(200).send(biofotos)
+  })
+})
+
+
+
+app.post('/api/articles/articulo', auth, admin, (req, res) => {
+  const articulo = new Articulo(req.body)
+  articulo.save((err, doc) => {
+    if (err) return res.json({ success: false, err })
+    res.status(200).json({
+      success: true,
+      brand: doc
+    });
+  });
+});
+
+app.post('/api/biofotos/biofoto', auth, admin, (req, res) => {
+  const biofoto = new Biofotos(req.body)
+  biofoto.save((err, doc) => {
+    if (err) return res.json({ success: false, err })
+    res.status(200).json({
+      success: true,
+      brand: doc
+    });
   });
 });
 

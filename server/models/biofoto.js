@@ -13,7 +13,7 @@ const biofotoSchema = mongoose.Schema({
     images: {
         type: [],
         required: true,
-    }
+    },
 
 
     contenido: {
@@ -41,4 +41,4 @@ const biofotoSchema = mongoose.Schema({
 
 
 const biofoto = mongoose.model("Biofoto", biofotoSchema, "biofotos")
-module.exports = { Biofoto }
+module.exports = { biofoto } 
