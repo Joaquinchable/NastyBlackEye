@@ -11,7 +11,7 @@ class HeaderHome extends Component {
                         <h1>Nasty Black Eye</h1>
                     </div>
                     <div class="header-subtitle">
-                        <h5><em> -Luz Escrita- </em></h5>
+                        <h5><em> {this.props.subtitle} </em></h5>
                     </div>
 
 

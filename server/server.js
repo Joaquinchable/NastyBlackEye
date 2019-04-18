@@ -47,14 +47,14 @@ app.get('/api/users/auth', (req, res) => {
   });
 });
 
-app.get('/api/articles / articulo', (req, res) => {
+app.get('/api/articles/articulo', (req, res) => {
   Articulo.find({}, (err, articles) => {
     if (err) return res.status(400).send(err)
     res.status(200).send(articles)
   })
 })
 
-app.get('/api/biofotos / biofot', (req, res) => {
+app.get('/api/biofotos/biofot', (req, res) => {
   Biofoto.find({}, (err, biofotos) => {
     if (err) return res.status(400).send(err)
     res.status(200).send(biofotos)

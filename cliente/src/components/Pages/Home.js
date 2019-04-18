@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import HeaderHome from "./../Layout/HeaderHome"
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <h1>hola</h1>
+        <HeaderHome subtitle="~Luz Escrita~" />
       </div>
     );
   }

@@ -5,7 +5,7 @@ class LoginBox extends Component {
     super(props);
     this.state = {};
   }
-  submitLogin(e) {}
+  submitLogin(e) { }
 
   render() {
     return (

@@ -25,10 +25,10 @@ const App = () => (
 
         <Redirect from="/Inicio" to="/home" />
         <Route exact path="/" component={Inicio, HeaderInicio} />
-        <Route exact path="/home" component={Home, HeaderHome} />
-        <Route exact path="/blog" component={Blog,HeaderHome} />
-        <Route exact path="/exposiciones" component={Exposiciones,HeaderHome} />
-        <Route exact path="/biofoto" component={Biofoto,HeaderHome} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/exposiciones" component={Exposiciones} />
+        <Route exact path="/biofoto" component={Biofoto} />
 
       </Switch>
       <Footer />

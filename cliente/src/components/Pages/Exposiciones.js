@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import HederHome from "./../Layout/HeaderHome"
 
 class Exposiciones extends Component {
   render() {
     return (
       <div>
-        <h1>culeros</h1>
+        < HederHome subtitle="~Exposiciones~" />
       </div>
     );
   }
