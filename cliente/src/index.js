@@ -7,11 +7,11 @@ import Home from "./components/Pages/Home";
 import Blog from "./components/Pages/Blog";
 import Exposiciones from "./components/Pages/Exposiciones";
 import Biofoto from "./components/Pages/Biofoto";
-import HeaderHome from "./components/Layout/HeaderHome";
-import HeaderInicio from "./components/Layout/HeaderInicio";
 
 import SignIn from "./components/Registro/SignIn";
 import SignUp from "./components/Registro/SignUp";
+import HeaderInicio from "./components/Layout/HeaderInicio";
+import HeaderHome from "./components/Layout/HeaderHome";
 import Footer from "./components/Layout/Footer";
 const App = () => (
   <BrowserRouter basename="/Inicio">
@@ -24,7 +24,7 @@ const App = () => (
       <Switch>
 
         <Redirect from="/Inicio" to="/home" />
-        <Route exact path="/" component={Inicio, HeaderInicio} />
+        <Route exact path="/" component={Inicio} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/exposiciones" component={Exposiciones} />
