@@ -9,9 +9,9 @@ import Exposiciones from "./components/Pages/Exposiciones";
 import Biofoto from "./components/Pages/Biofoto";
 import HeaderHome from "./components/Layout/HeaderHome";
 import HeaderInicio from "./components/Layout/HeaderInicio";
-//import Login from "./components/Registro/Login";
-//import LoginBox from "./components/Registro/LoginBox";
-//import RegisterBox from "./components/Registro/RegisterBox";
+
+import SignIn from "./components/Registro/SignIn";
+import SignUp from "./components/Registro/SignUp";
 import Footer from "./components/Layout/Footer";
 const App = () => (
   <BrowserRouter basename="/Inicio">
@@ -29,6 +29,8 @@ const App = () => (
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/exposiciones" component={Exposiciones} />
         <Route exact path="/biofoto" component={Biofoto} />
+        <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/signup" component={SignUp} />
 
       </Switch>
       <Footer />
@@ -36,7 +38,5 @@ const App = () => (
     </div>
   </BrowserRouter >
 );
-//<Route exact path="/sing up" component={RegisterBox,Login} />
-//<Route exact path="/sing in " component={LoginBox,Login} />
 
 ReactDOM.render(<App />, document.getElementById("root"));

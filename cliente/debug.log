@@ -1,1 +1,36 @@
 [0328/195601.059:ERROR:settings.cc(320)] Settings magic is not 1129342067
+[0419/134828.732:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/135828.733:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/135828.733:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/140328.734:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/141828.736:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/143328.767:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/144828.768:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/150328.956:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/151828.959:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/153326.277:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/153329.812:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/154829.866:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/155709.839:ERROR:process_reader_win.cc(182)] ResumeThread: El parámetro no es correcto. (0x57)
+[0419/155710.516:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.516:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.516:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.516:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.516:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.516:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.516:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.516:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.517:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.517:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.517:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.517:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.517:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.518:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0419/155710.518:ERROR:process_reader_win.cc(123)] NtOpenThread: Se ha especificado un identificador de cliente no válido. (0xc000000b)
+[0419/155710.932:ERROR:exception_snapshot_win.cc(98)] thread ID 3004 not found in process
+[0419/155711.065:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0419/160330.222:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/163702.942:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/164703.179:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/164703.180:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0419/165129.353:ERROR:crash_report_database_win.cc(428)] unexpected header

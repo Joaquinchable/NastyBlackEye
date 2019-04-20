@@ -38,9 +38,7 @@ body {
 .header-subtitle {
   font-size: 25px;
   color: #2f4f4f;
-  margin-bottom: 15px;
-  padding-right:50px; 
-}
+  margin-bottom: 15px; }
 
 .barnav-container {
   background-color: black;
@@ -64,7 +62,7 @@ body {
   margin: auto; }
 
 .menu ul li a {
-  color: #121f1f;
+  color: #9ca1a1;
   display: block;
   width: calc(100% / 4);
   margin: 5px;
@@ -195,7 +193,7 @@ body {
   padding: 5px;
   font-size: 18;
   font-family: Arial, Helvetica, sans-serif;
-  color: #121f1f;
+  color: #b7f0f0;
   text-transform: uppercase;
   transition: 0.5s; }
 
@@ -313,3 +311,88 @@ body {
   background: #0d2627;
   margin-bottom: 0px;
   border-top: 2px solid #2f4f4f; }
+
+section {
+  background-color: #090b11;
+  width: 100;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding-left: 23%;
+  padding-right: 23%; }
+
+.header-login {
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 0px;
+  font-family: Ozxgen, sans-serif;
+  font-size: 22px;
+  border-bottom: 2px solid #70a1ff;
+  background-color: black;
+  color: #70a1ff; }
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  padding-left: 33%;
+  padding-right: 33%;
+  text-align: center;
+  height: 70%;
+  border: 3px solid #131414;
+  border-radius: 250px;
+  margin-top: 20px; }
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: aliceblue; }
+
+.label {
+  font-family: Oxygen, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding-left: 5px;
+  color: #b7f0f0; }
+
+.login-input {
+  height: 2.1em;
+  border-radius: 29px;
+  border: 1px solid #70a1ff;
+  padding: 13px;
+  font-family: Oxygen, sans-serif;
+  font-size: 19px;
+  color: black;
+  background-color: #9db7d8; }
+
+.login-input:hover {
+  border: 2px solid #70a1ff;
+  border-radius: 10px; }
+
+.login-input:focus {
+  border: 2px solid #ebebf3; }
+
+.login-input::placeholder {
+  color: black; }
+
+.login-btn {
+  padding: 2px 30px;
+  border: 12px;
+  font-size: 18px;
+  border-radius: 12px;
+  font-family: Oxygen, sans-serif;
+  background-color: #121314;
+  margin-top: 20px;
+  border: 2px solid  #70a1ff;
+  transition: background-color 0.3s ease-out;
+  cursor: pointer; }
+
+.login-btn:hover,
+.login-btn:focus {
+  background-color: #417cef;
+  color: white; }
