@@ -221,9 +221,9 @@ body {
   transform: scaleX(1); }
 
 .box-section {
-  background-color: #1f1e20;
+  background-colo: black;
   width: 100%;
-  height: 2200px;
+  height: 1900px;
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -236,22 +236,51 @@ body {
   width: 100%;
   height: 600px;
   margin-top: 3px;
-  background-color: blue;
+  background-color: #1c1c1d;
   display: flex; }
 
 .box-descripcion {
   width: 100%;
   height: 600px;
-  margin-top: 10px;
-  background-color: #090b11;
-  display: flex; }
+  margin-top: 0px;
+  background-color: black;
+  display: flex;
+  padding-right: .5%;
+  padding-left: .5%;
+  position: relative; }
 
 .box-nosotros {
   display: flex;
   width: 100%;
   height: 600px;
-  margin-top: 10px;
-  background-color: blue; }
+  margin-top: 0px;
+  margin-bottom: 4%;
+  background-color: Black;
+  padding-right: .5%;
+  padding-left: .5%;
+  position: relative; }
+
+.articulo {
+  display: flex;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  width: 100%;
+  height: 540px;
+  background-color: black;
+  border-radius: 10px;
+  justify-content: start;
+  padding-left: 8%;
+  -webkit-box-shadow: inset 7px 4px 77px -29px #086699;
+  -moz-box-shadow: inset 7px 4px 77px -29px #086699;
+  box-shadow: inset 7px 4px 77px -29px #086699; }
+
+.titulo-inicio {
+  display: flex;
+  color: #e5eff7;
+  margin-top: 3%;
+  font-style: italic;
+  font-size: 50px;
+  position: relative; }
 
 .footer {
   width: 100%;
@@ -335,7 +364,7 @@ section {
   padding: 5px;
   margin-bottom: 0px;
   position: relative;
-  font-family: Ozxgen, sans-serif;
+  font-family: Oxygen, sans-serif;
   font-size: 22px;
   border-bottom: 2px solid #70a1ff;
   background-color: black;
