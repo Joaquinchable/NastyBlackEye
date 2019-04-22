@@ -6,7 +6,12 @@ class Home extends Component {
     return (
       <div>
         <HeaderHome subtitle="~Luz Escrita~" />
+        <div className="header-login">Nasty</div>
+        <section className="section-home"></section>
+
       </div>
+
+
     );
   }
 }

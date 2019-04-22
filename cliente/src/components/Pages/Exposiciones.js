@@ -6,6 +6,8 @@ class Exposiciones extends Component {
     return (
       <div>
         < HederHome subtitle="~Exposiciones~" />
+        <div className="header-login">Exposiciones</div>
+        <section className="section-home"></section>
       </div>
     );
   }

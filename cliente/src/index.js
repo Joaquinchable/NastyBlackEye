@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import "./scss/Estilos.css";
+import "./scss/Estilos.css"
 import Inicio from "./components/Pages/Inicio";
 import Home from "./components/Pages/Home";
 import Blog from "./components/Pages/Blog";

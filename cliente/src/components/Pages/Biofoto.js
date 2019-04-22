@@ -5,6 +5,8 @@ class Biofoto extends Component {
     return (
       <div>
         <HeaderHome subtitle="~BioFoto~" />
+        <div className="header-login">Biofoto</div>
+        <section className="section-home"></section>
       </div>
     );
   }

@@ -6,39 +6,11 @@ class Blog extends Component {
     return (
       <div>
         <HeaderHome subtitle="~Blog~" />
+        <div className="header-login">Blog</div>
+        <section className="section-home"></section>
 
-
-
-        <section>
-          <div className='section'>
-
-            <h1>Blog</h1>
-            <main>
-
-              <h2> Foto de productos</h2>
-
-
-              <article>
-                <h2>onpoinponp[</h2>
-                <p>Lndspomcposdmcolsmd;clmsd;lcms;dlmc;lsd c;ls d;clmsd;lcm;sldmc;lsmd</p>
-
-
-              </article>
-              <article>
-                <h2>onpoinponp[</h2>
-                <p>Lndspomcposdmcolsmd;clmsd;lcms;dlmc;lsd c;ls d;clmsd;lcm;sldmc;lsmd</p>
-
-
-              </article>
-
-
-            </main>
-          </div>
-        </section>
-
-      </div >
-
-    );
+      </div>
+    )
   }
 }
 
