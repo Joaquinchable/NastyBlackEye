@@ -7,7 +7,21 @@ class Exposiciones extends Component {
       <div>
         < HederHome subtitle="~Exposiciones~" />
         <div className="header-login">Exposiciones</div>
-        <section className="section-home"></section>
+        <section className="section-body">
+
+
+          <div className="section-container">
+
+          </div>
+
+        </section>
+
+
+
+
+
+
+
       </div>
     );
   }
