@@ -1,20 +1,15 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const mongoose = require("mongoose");
-const cookieParser = require("cookie-parser");
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 3002;
 
 require("dotenv").config();
 
-mongoose.connect(
-  process.env.DATABASE,
-  {
-    useNewUrlParser: true,
-    useCreateIndex: true
-  },
-  err => {
-    if (err) return err;
-    console.log("conectado a MongoDB");
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useCreateIndex: true },
+  (err) => {
+    if (err) return err
+    console.log('conectado a MongoDB')
   }
 );
 
@@ -22,8 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
+//Modles
 
-const { User } = require("./models/user.js");
+const { User } = require('./models/user.js');
 
 const { auth } = require("./middleware/auth");
 
@@ -33,7 +29,7 @@ const { biofoto } = require("./models/biofoto");
 
 const { admin } = require('./middleware/admin');
 
-app.get('/api/users/auth', (req, res) => {
+/*app.get('/api/users/auth', (req, res) => {
   res.status(200).json({
     isAdmin: req.user.role === 0 ? false : true,
     isAuth: true,
@@ -46,7 +42,7 @@ app.get('/api/users/auth', (req, res) => {
 
 
   });
-});
+});*/
 
 app.get('/api/articles/articulo', (req, res) => {
   Articulo.find({}, (err, articles) => {
@@ -87,9 +83,10 @@ app.post('/api/biofotos/biofoto', auth, admin, (req, res) => {
 });
 
 
-app.post("/api/users/register", (req, res, next) => {
-  console.log("register")
+app.post('/api/users/register', (req, res, next) => {
+  // console.log('register')
   const user = new User(req.body);
+
   user.save((err, doc) => {
     if (err) return res.json({ success: false, err });
     res.status(200).json({
@@ -99,24 +96,22 @@ app.post("/api/users/register", (req, res, next) => {
   });
 });
 
-app.post("/api/users/login", (req, res) => {
-  User.findOne({ email: req.body.email }, (err, user) => {
-    if (!user) return res.json({
-      loginSuccess: false,
-      message: "Auth fallida, email no encontrado"
-    });
+
+app.post('/api/users/login', (req, res) => {
+
+  User.findOne({ 'email': req.body.email }, (err, user) => {
+    if (!user) return res.json({ loginSuccess: false, message: 'Auth fallida, email no encontrado' });
 
     user.comparePassword(req.body.password, (err, isMatch) => {
-      if (!isMatch) return res.json({ loginSuccess: false, message: "Password erroneo" });
+      if (!isMatch) return res.json({ loginSuccess: false, message: 'Password erroneo' });
+
       user.generateToken((err, user) => {
         if (err) return res.status(400).send(err);
-        console.log(user.token);
+
         try {
-          res
-            .cookie("Nasty_auth", user.token)
-            .status(200)
-            .json({ loginSuccess: true })
-        } catch (err) {
+          res.cookie('Nasty_auth', user.token).status(200).json({ loginSuccess: true })
+        }
+        catch (err) {
           console.log(err);
         }
       });
