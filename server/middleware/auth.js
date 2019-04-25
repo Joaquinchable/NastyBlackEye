@@ -1,4 +1,5 @@
-const { User } = require("../models/user");
+const { User } = require('./../models/user');
+
 let auth = (req, res, next) => {
 
     let token = req.cookies.Nasty_auth
@@ -6,7 +7,7 @@ let auth = (req, res, next) => {
     User.findByToken(token, (err, user) => {
 
         if (err) throw err
-        if (!user) return res.jason({
+        if (!user) return res.json({
             isAuth: false,
             error: true,
 

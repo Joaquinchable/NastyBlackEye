@@ -27,7 +27,14 @@ const userSchema = mongoose.Schema({
     required: true,
     maxlength: 100
   },
-
+  cart: {
+    type: Array,
+    default: []
+  },
+  history: {
+    type: Array,
+    default: []
+  },
   role: {
     type: Number,
     default: 0
@@ -70,11 +77,11 @@ userSchema.methods.generateToken = async function (cb) {
 };
 
 
-userSchema.statics.findByIdToken = function (token, cb) {
+userSchema.statics.findByToken = function (token, cb) {
   var user = this;
 
   jwt.verify(token, process.env.SECRET, function (err, decode) {
-    user.findOne({ _id: decode, token: token }, function (err, user) {
+    user.findOne({ "_id": decode, "token": token }, function (err, user) {
       if (err) cb(error);
       cb(null, user);
     });

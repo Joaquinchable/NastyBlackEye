@@ -21,15 +21,64 @@ app.use(cookieParser());
 
 const { User } = require('./models/user.js');
 
-const { auth } = require("./middleware/auth");
+const { Biofoto } = require('./models/biofoto');
 
-const { articulo } = require("./models/articulo");
+const { Articulo } = require("./models/articulo");
 
-const { biofoto } = require("./models/biofoto");
 
-const { admin } = require('./middleware/admin');
+//Middlewares
 
-/*app.get('/api/users/auth', (req, res) => {
+const { auth } = require('./middleware/auth');
+
+//const { admin } = require('./middleware/admin');
+
+//Blog
+
+app.post('/api/bLog/articulo', auth, (req, res) => {
+  const articulo = new Articulo(req.body);
+
+  articulo.save((err, doc) => {
+    if (err) return res.json({ success: false, err });
+    res.status(200).json({
+      success: true,
+      articulo: doc
+    })
+  })
+});
+
+
+app.get('/api/blog/articulos', (req, res) => {
+  Articulo.find({}, (err, articulos) => {
+    if (err) return res.status(400).send(err)
+    res.status(200).send(articulos)
+  })
+})
+
+
+
+
+///Biofoto
+app.post('/api/biofotos/biofoto', auth, (req, res) => {
+  const biofoto = new Biofoto(req.body)
+  biofoto.save((err, doc) => {
+    if (err) return res.json({ success: false, err })
+    res.status(200).json({
+      success: true,
+      biofoto: doc
+    });
+  });
+});
+
+app.get('/api/biofotos/fotografos', (req, res) => {
+  Biofoto.find({}, (err, fotografos) => {
+    if (err) return res.status(400).send(err);
+    res.status(200).send(fotografos)
+  })
+})
+
+///User
+
+app.get('/api/users/auth', auth, (req, res) => {
   res.status(200).json({
     isAdmin: req.user.role === 0 ? false : true,
     isAuth: true,
@@ -37,48 +86,10 @@ const { admin } = require('./middleware/admin');
     name: req.user.name,
     lastname: req.user.lastname,
     role: req.user.role,
-    token: req.user.token
+    cart: req.user.cart,
+    history: req.user.history
 
 
-
-  });
-});*/
-
-app.get('/api/articles/articulo', (req, res) => {
-  Articulo.find({}, (err, articles) => {
-    if (err) return res.status(400).send(err)
-    res.status(200).send(articles)
-  })
-})
-
-app.get('/api/biofotos/biofoto', (req, res) => {
-  Biofoto.find({}, (err, biofotos) => {
-    if (err) return res.status(400).send(err)
-    res.status(200).send(biofotos)
-  })
-})
-
-
-
-app.post('/api/articles/articulo', auth, admin, (req, res) => {
-  const articulo = new Articulo(req.body)
-  articulo.save((err, doc) => {
-    if (err) return res.json({ success: false, err })
-    res.status(200).json({
-      success: true,
-      brand: doc
-    });
-  });
-});
-
-app.post('/api/biofotos/biofoto', auth, admin, (req, res) => {
-  const biofoto = new Biofotos(req.body)
-  biofoto.save((err, doc) => {
-    if (err) return res.json({ success: false, err })
-    res.status(200).json({
-      success: true,
-      brand: doc
-    });
   });
 });
 
@@ -90,8 +101,8 @@ app.post('/api/users/register', (req, res, next) => {
   user.save((err, doc) => {
     if (err) return res.json({ success: false, err });
     res.status(200).json({
-      success: true,
-      userdata: doc
+      success: true
+      //userdata: doc
     });
   });
 });
@@ -111,6 +122,7 @@ app.post('/api/users/login', (req, res) => {
         try {
           res.cookie('Nasty_auth', user.token).status(200).json({ loginSuccess: true })
         }
+
         catch (err) {
           console.log(err);
         }
@@ -118,6 +130,7 @@ app.post('/api/users/login', (req, res) => {
     });
   });
 });
+
 
 app.get('/api/user/logout', auth, (req, res) => {
   User.findOneAndUpdate(

@@ -1,31 +1,16 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const articuloSchema = mongoose.Schema({
 
 
-    titulo: {
+    name: {
         type: String,
         required: true,
-        maxlenght: 100
-
+        maxlenght: 100,
+        unique: 1
     },
 
-    autor: {
-        type: String,
-        require: true
 
-    },
-    contenido: {
-        type: String,
-        require: true
-
-    },
-
-    fecha: {
-        type: String,
-        require: true
-
-    }
 
 
 
@@ -39,5 +24,5 @@ const articuloSchema = mongoose.Schema({
 
 
 
-const articulo = mongoose.model("Articulo", articuloSchema, "articles")
-module.exports = { articulo }
+const Articulo = mongoose.model('Articulo', articuloSchema)
+module.exports = { Articulo }

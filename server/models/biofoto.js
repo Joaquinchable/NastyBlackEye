@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const biofotoSchema = mongoose.Schema({
 
@@ -6,39 +6,13 @@ const biofotoSchema = mongoose.Schema({
     name: {
         type: String,
         required: true,
-        maxlenght: 100
-
-    },
-
-    images: {
-        type: [],
-        required: true,
-    },
-
-
-    contenido: {
-        type: String,
-        require: true
-
-    },
-
-    fecha: {
-        type: String,
-        require: true
-
+        maxlenght: 100,
+        unique: 1
     }
 
+});
 
 
 
-
-
-
-
-
-})
-
-
-
-const biofoto = mongoose.model("Biofoto", biofotoSchema, "biofotos")
-module.exports = { biofoto } 
+const Biofoto = mongoose.model('Biofoto', biofotoSchema)
+module.exports = { Biofoto } 
