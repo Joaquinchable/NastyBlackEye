@@ -25,6 +25,9 @@ const { Biofoto } = require('./models/biofoto');
 
 const { Articulo } = require("./models/articulo");
 
+const { Biografia } = require('./models/biografia');
+
+const { Blog } = require('./models/blog')
 
 //Middlewares
 
@@ -34,6 +37,154 @@ const { auth } = require('./middleware/auth');
 
 //Blog
 
+app.post('/api/blog/blogs', auth, (req, res) => {
+  const blog = new Blog(req.body);
+
+  blog.save((err, doc) => {
+    if (err) return res.json({ success: false, err });
+    res.status(200).json({
+      success: true,
+      blogs: doc
+
+    })
+  })
+
+});
+
+// 1 id
+// /api/product/article?id=HSKKKSKS&type=single
+// más de 1 id
+// /api/product/article?id=HSKKKSKS,akdjfañjf,kdjfalkñfja&type=dhjfljakhdf&type=array
+
+
+
+app.get('/api/blog/blogs_by_id', (req, res) => {
+  let type = req.query.type;
+  let items = req.query.id;
+
+  if (type === "array") {
+    let ids = req.query.id.split(',');
+    items = [];
+    items = ids.map(item => {
+      return mongoose.Types.ObjectId(item);
+    })
+  }
+  Blog.
+    find({ '_id': { $in: items } })
+    .populate('articulo')
+    .exec((err, docs) => {
+      return res.status(200).send(docs)
+    });
+
+
+})
+
+//  (Más nuevas)
+// blogs ? sortBy=createdAt&order=desc&limit=2
+
+// B (Marticulo del dia)
+// blogs ?sortBy=articuloDAy&order=desc&limit=2
+
+app.get('/api/blog/blogs', (req, res) => {
+  let order = req.query.order ? req.query.order : 'asc'
+  let sortBy = req.query.sortBy ? req.query.sortBy : '_id'
+  let limit = req.query.limit ? parseInt(req.query.limit) : 100
+
+  Blog.
+    find()
+    .populate('articulo')
+
+    .sort([[sortBy, order]])
+    .limit(limit)
+    .exec((err, blogs) => {
+      if (err) return res.status(400).send(err)
+      res.send(blogs)
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+///Biofotos
+app.post('/api/biografia/biografias', auth, (req, res) => {
+  const biografia = new Biografia(req.body);
+
+  biografia.save((err, doc) => {
+    if (err) return res.json({ success: false, err });
+    res.status(200).json({
+      success: true,
+      biografias: doc
+
+    })
+  })
+
+});
+
+// 1 id
+// /api/product/article?id=HSKKKSKS&type=single
+// más de 1 id
+// /api/product/article?id=HSKKKSKS,akdjfañjf,kdjfalkñfja&type=dhjfljakhdf&type=array
+
+
+app.get('/api/bografia/biografias_by_id', (req, res) => {
+  let type = req.query.type;
+  let items = req.query.id;
+
+  if (type === "array") {
+    let ids = req.query.id.split(',');
+    items = [];
+    items = ids.map(item => {
+      return mongoose.Types.ObjectId(item);
+    })
+  }
+  Biografia.
+    find({ '_id': { $in: items } })
+    .populate('Biofoto')
+    .exec((err, docs) => {
+      return res.status(200).send(docs)
+    })
+
+
+});
+
+// BY ARRIVAL (Más nuevas)
+//biografias?sortBy=createdAt&order=desc&limit=1
+
+// BY day (del dia)
+// biografias ? sortBy = biofotoDay & order=desc & limit=4
+
+app.get('/api/biografia/biografias', (req, res) => {
+  let order = req.query.order ? req.query.order : 'asc'
+  let sortBy = req.query.sortBy ? req.query.sortBy : '_id'
+  let limit = req.query.limit ? parseInt(req.query.limit) : 100
+
+  Biografia.
+    find()
+    .populate('biofoto')
+
+    .sort([[sortBy, order]])
+    .limit(limit)
+    .exec((err, biografias) => {
+      if (err) return res.status(400).send(err)
+      res.send(biografias)
+    })
+});
+
+
+
+
+
+
+
+///Articulos
 app.post('/api/bLog/articulo', auth, (req, res) => {
   const articulo = new Articulo(req.body);
 
@@ -56,8 +207,8 @@ app.get('/api/blog/articulos', (req, res) => {
 
 
 
-
 ///Biofoto
+
 app.post('/api/biofotos/biofoto', auth, (req, res) => {
   const biofoto = new Biofoto(req.body)
   biofoto.save((err, doc) => {
@@ -78,6 +229,8 @@ app.get('/api/biofotos/fotografos', (req, res) => {
 
 ///User
 
+//Middleware auth
+
 app.get('/api/users/auth', auth, (req, res) => {
   res.status(200).json({
     isAdmin: req.user.role === 0 ? false : true,
@@ -93,6 +246,7 @@ app.get('/api/users/auth', auth, (req, res) => {
   });
 });
 
+//register
 
 app.post('/api/users/register', (req, res, next) => {
   // console.log('register')
@@ -107,6 +261,7 @@ app.post('/api/users/register', (req, res, next) => {
   });
 });
 
+///Login
 
 app.post('/api/users/login', (req, res) => {
 
@@ -131,6 +286,7 @@ app.post('/api/users/login', (req, res) => {
   });
 });
 
+//Logout
 
 app.get('/api/user/logout', auth, (req, res) => {
   User.findOneAndUpdate(
