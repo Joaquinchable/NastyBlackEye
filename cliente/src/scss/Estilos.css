@@ -154,6 +154,17 @@ body {
   align-items: flex-end;
   border-bottom: 7px solid #091718; }
 
+.header-login {
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 0px;
+  position: relative;
+  font-family: Oxygen, sans-serif;
+  font-size: 22px;
+  border-bottom: 2px solid #70a1ff;
+  background-color: black;
+  color: #70a1ff; }
+
 .Titulo {
   margin: 0px;
   margin-top: 25px;
@@ -221,7 +232,7 @@ body {
   transform: scaleX(1); }
 
 .box-section {
-  background-colo: black;
+  background-color: black;
   width: 100%;
   height: 1900px;
   display: flex;
@@ -232,9 +243,21 @@ body {
   border: 4px solid #0a0a0a;
   border-radius: 10px; }
 
+.box-section-inicio {
+  background-color: black;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  border: 4px solid #0a0a0a;
+  border-radius: 10px; }
+
 .box-riel-foto {
   width: 100%;
-  height: 600px;
+  height: 800px;
   margin-top: 3px;
   display: flex;
   position: relative;
@@ -263,20 +286,22 @@ body {
 .box-nosotros {
   display: flex;
   width: 100%;
-  height: 600px;
+  height: 1500px;
   margin-top: 0px;
   margin-bottom: 4%;
   background-color: Black;
   padding-right: .5%;
   padding-left: .5%;
-  position: relative; }
+  position: relative;
+  color: whitesmoke;
+  font-size: 39px; }
 
 .articulo {
   display: flex;
-  margin-top: 2%;
+  margin-top: 0%;
   margin-bottom: 4%;
   width: 100%;
-  height: 540px;
+  height: 1500px;
   background-color: black;
   border-radius: 10px;
   justify-content: start;
@@ -363,48 +388,42 @@ body {
 section {
   background-color: #090b11;
   width: 100%;
-  height: 470px;
+  height: 570px;
   display: flex;
-  flex-direction: column;
-  justify-items: center;
-  padding-left: 23%;
-  padding-right: 23%; }
-
-.header-login {
-  text-align: center;
-  padding: 5px;
-  margin-bottom: 0px;
-  position: relative;
-  font-family: Oxygen, sans-serif;
-  font-size: 22px;
-  border-bottom: 2px solid #70a1ff;
-  background-color: black;
-  color: #70a1ff; }
+  padding-left: 120px;
+  padding-right: 120px; }
 
 .box {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: black;
-  color: white;
-  padding-left: 33%;
-  padding-right: 33%;
-  text-align: center;
-  height: 70%;
+  width: 100%;
+  height: 80%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding-left: 13%;
+  padding-right: 13%;
   border: 3px solid #131414;
-  border-radius: 250px;
-  margin-top: 65px; }
+  border-radius: 200px;
+  background-color: black;
+  font-family: Oxygen, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #b7f0f0; }
 
-.input-group {
+.left {
   display: flex;
-  flex-direction: column;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  background-color: aliceblue; }
+  margin-top: 80px;
+  margin-right: px;
+  margin-left: 15px; }
+
+.right {
+  display: flex;
+  margin-top: 80px;
+  margin-right: 400px;
+  margin-left: 15px; }
 
 .label {
   font-family: Oxygen, sans-serif;
-  font-size: 15px;
+  font-size: 10px;
   font-weight: 600;
   padding-left: 5px;
   color: #b7f0f0; }
@@ -417,7 +436,8 @@ section {
   font-family: Oxygen, sans-serif;
   font-size: 19px;
   color: black;
-  background-color: #9db7d8; }
+  background-color: #9db7d8;
+  margin-top: 8%; }
 
 .login-input:hover {
   border: 2px solid #70a1ff;
@@ -427,7 +447,7 @@ section {
   border: 2px solid #ebebf3; }
 
 .login-input::placeholder {
-  color: black; }
+  color: #141313; }
 
 .login-btn {
   padding: 2px 30px;
@@ -439,7 +459,8 @@ section {
   margin-top: 20px;
   border: 2px solid  #70a1ff;
   transition: background-color 0.3s ease-out;
-  cursor: pointer; }
+  cursor: pointer;
+  color: whitesmoke; }
 
 .login-btn:hover,
 .login-btn:focus {
@@ -517,3 +538,72 @@ section {
   border-left: 1px solid #69d9fb;
   margin-bottom: 2%;
   color: azure; }
+
+.user_container {
+  display: flex;
+  margin-bottom: 50px;
+  min-height: 700px; }
+
+.user_container .user_left_nav {
+  border-right: 1px solid #f8f8f8; }
+
+.user_container .user_left_nav .links a {
+  display: block;
+  border-bottom: 1px solid #dddddd;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 10px 0px;
+  width: 280px; }
+
+.section-container {
+  display: flex;
+  flex-direction: column; }
+
+.container-encabezado-blog {
+  width: 100%;
+  height: 1000px;
+  background-color: black; }
+
+.titulo-blog {
+  padding-top: 5%;
+  padding-left: 5%;
+  width: 60%;
+  height: 200px;
+  background-color: black;
+  color: whitesmoke;
+  font-size: 10px; }
+
+.container-imagen-blog {
+  width: 100%;
+  height: 800px;
+  background-image: url(../assets/cinemato.jpg); }
+
+.imagen-biofoto {
+  margin-left: 6%;
+  margin-right: 6%;
+  width: 90%;
+  height: 720px;
+  background-image: url(../assets/ansel.jpg); }
+
+.titulo-biofoto {
+  padding-top: 5%;
+  padding-left: 5%;
+  width: 60%;
+  height: 200px;
+  background-color: black;
+  color: whitesmoke;
+  font-size: 10px; }
+
+.EN_Desarrollo {
+  margin-left: 10%;
+  width: 80%;
+  height: 1600px;
+  background-image: url(../assets/hombres_trabajando.jpg); }
+
+.container-texto {
+  width: 100%;
+  height: 1600px;
+  color: whitesmoke;
+  background-color: black;
+  font-size: 23px;
+  font-family: sans-serif; }

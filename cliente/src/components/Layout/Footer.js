@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+
+
 class Footer extends Component {
   render() {
     return (
@@ -16,11 +18,7 @@ class Footer extends Component {
               <a href="#" className="Flickr" />
               <a href="#" className="YouToBE" />
             </div>
-            <div className="footer-culumna">
-              <h3>Novedades</h3>
-              <input type="email" placeholder="Dejanos tu correo" />
-              <input type="submit" value="Enviar" />
-            </div>
+
           </div>
         </div>
 

@@ -1,58 +1,60 @@
 section{
     background-color: #090b11;
     width: 100%;
-    height: 470px;
+    height: 570px;
     display: flex;
-    flex-direction: column;
-    justify-items: center;
-    padding-left: 23%;
-    padding-right: 23%;
+
+    padding-left: 120px;
+    padding-right: 120px; 
+    
 }
-.header-login{
-    text-align: center;
-    padding: 5px;
-    margin-bottom: 0px;
-    position: relative;
-    font-family: Oxygen, sans-serif;
-    font-size: 22px;
-    border-bottom: 2px solid #70a1ff;
-    background-color: black;
-    color:  #70a1ff;
-}
+
 
 .box {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: black;
-    color:white;
-    padding-left: 33%;
-    padding-right: 33%;
-    text-align: center;
-    height: 70%;
+    width: 100%;
+    height: 80%;
+
+    margin-top: 3%;
+    margin-bottom: 3%;
+
+    padding-left: 13%;
+    padding-right: 13%;
     border: 3px solid #131414;
-    border-radius: 250px; 
-    margin-top: 65px;
+    border-radius: 200px; 
+    background-color: black;
+    font-family: Oxygen, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color:rgb(183, 240, 240);
+    
+    
+    
     
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: aliceblue;
-   
-    
-}
 
+.left{
+display: flex;
+margin-top: 80px;
+margin-right: px ;
+margin-left:15px ;
+}
+.right{
+display: flex;
+margin-top: 80px;
+margin-right: 400px ;
+margin-left:15px ;
+}
+    
 //Label
 .label {
     font-family: Oxygen, sans-serif;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 600;
     padding-left: 5px;
     color:rgb(183, 240, 240);
+    
 } 
 
 
@@ -67,6 +69,7 @@ section{
     font-size: 19px;
     color:black; 
     background-color: rgb(157, 183, 216);
+    margin-top: 8%;
     
     
 } 
@@ -84,7 +87,7 @@ section{
 //Input Placeholder
 .login-input::placeholder {
     
-    color :black;
+    color :rgb(20, 19, 19);
 
     
     
@@ -102,6 +105,7 @@ section{
     border: 2px solid  #70a1ff;
     transition: background-color 0.3s ease-out;
     cursor: pointer;
+    color:whitesmoke;
 }  
 
 .login-btn:hover,

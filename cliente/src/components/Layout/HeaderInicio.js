@@ -11,11 +11,12 @@ class HeaderInicio extends Component {
                         <li className="li-inicio">
                             <Link to="/home" className="a-inicio">Nasty Black Eye</Link>
                         </li>
+
                         <li className="li-inicio">
-                            <Link to="/signin" className="a-inicio">Sign In</Link>
+                            <Link to="/RegisterLogin" className="a-inicio">Login</Link>
                         </li>
                         <li className="li-inicio">
-                            <Link to="/signup" className="a-inicio">Sign Up</Link>
+                            <Link to="/SignUp" className="a-inicio">Register</Link>
                         </li>
                     </ul>
                 </header>

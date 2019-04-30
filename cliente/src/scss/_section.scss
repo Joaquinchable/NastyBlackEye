@@ -1,0 +1,65 @@
+.section-container{
+ display: flex;
+ flex-direction: column;
+}
+
+.container-encabezado-blog{
+width: 100%;
+height: 1000px ;
+background-color:black;
+
+}
+
+.titulo-blog{
+padding-top: 5%;
+padding-left: 5%;
+width: 60%;
+height:200px ;
+background-color:black;
+color:whitesmoke;
+font-size: 10px;
+}
+
+.container-imagen-blog{
+    width: 100%;
+    height: 800px;
+    background-image: url(../assets/cinemato.jpg)
+    
+}
+
+
+.imagen-biofoto{
+margin-left: 6%;
+margin-right: 6%;
+    width: 90%;
+    height: 720px;
+    background-image: url(../assets/ansel.jpg);
+}
+.titulo-biofoto{
+    padding-top: 5%;
+    padding-left: 5%;
+    width: 60%;
+    height:200px ;
+    background-color:black;
+    color:whitesmoke;
+    font-size: 10px;
+}
+.EN_Desarrollo {
+    margin-left: 10%;
+    width: 80%;
+    height: 1600px ; 
+    
+    background-image: url(../assets/hombres_trabajando.jpg)
+
+}
+
+.container-texto{
+
+width: 100%;
+height:1600px ;
+color: whitesmoke;
+background-color: black;
+font-size: 23px;
+font-family: sans-serif;
+
+}

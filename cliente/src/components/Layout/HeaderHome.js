@@ -22,7 +22,7 @@ class HeaderHome extends Component {
                         <ul class="navegacion">
 
                             <li>
-                                <Link to="/home">Nasty </Link>
+                                <Link to="/home">Nosotros </Link>
                             </li>
                             <li>
                                 <Link to="/blog">Blog</Link>
